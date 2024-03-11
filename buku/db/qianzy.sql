@@ -11,7 +11,7 @@
  Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 06/03/2024 21:01:56
+ Date: 11/03/2024 07:47:56
 */
 
 SET NAMES utf8mb4;
@@ -231,8 +231,7 @@ CREATE TABLE `tb_team`  (
 INSERT INTO `tb_team` VALUES (5, 5, 'namae', 'jabtanr', 'email123r@gmail.com', '0r', '0r', 'IGr', 'team-3.jpg', 'keteranganr');
 INSERT INTO `tb_team` VALUES (6, 6, 'nma', 'sdsd', 'su@gmail.com', '0', '0', '', 'azzahra_salsabila.JPG', '');
 INSERT INTO `tb_team` VALUES (7, 7, 'alpurkan2', 'jabatan', 'email123@gmail.com', '', 'https://www.facebook.com/profile.php?id=100084905646003', 'https://www.instagram.com/alpurkan.w/?hl=id', 'kurniati.jpg', 'Lorem ipsum, atau ringkasnya lipsum, adalah teks standar yang ditempatkan untuk mendemostrasikan elemen grafis atau presentasi visual seperti font, tipografi, dan tata letak');
-INSERT INTO `tb_team` VALUES (10, 8, 'tesss3', '4443', '', '', '', '', 'foto_gw.jpg', '');
-INSERT INTO `tb_team` VALUES (11, 9, 'tess', '', '', '', '', '', 'foto_gw.jpg', '');
+INSERT INTO `tb_team` VALUES (10, 8, 'tesss3', '4443', '', '', '', '', 'blankUser.png', '');
 
 -- ----------------------------
 -- Table structure for tb_user
@@ -254,25 +253,6 @@ CREATE TABLE `tb_user`  (
 -- ----------------------------
 INSERT INTO `tb_user` VALUES (1, 'admin', NULL, 'admin', '123', 1, 1);
 INSERT INTO `tb_user` VALUES (2, 'cust', NULL, 'cust', '123', 2, 1);
-INSERT INTO `tb_user` VALUES (3, 'nama', 'email123@gmail.com', 'username', 'pass2', 2, 0);
-INSERT INTO `tb_user` VALUES (4, 'alpurkan widianto', 'alpurkan@gmail.com', 'admin', '123', 2, 0);
-INSERT INTO `tb_user` VALUES (5, 'Scarlet', 'email@email.com', '<script>alert(1)</script>', 'rmg12345', 2, 0);
-INSERT INTO `tb_user` VALUES (6, 'Beni', 'nsgob3l@gmail.com', 'gob3l', 'Nisarbfd76', 2, 0);
-INSERT INTO `tb_user` VALUES (7, 'Designer', 'rgiangiacomo@aol.com', 'Laila Gleichner', '8L821HkjzC4Cz3F', 2, 0);
-INSERT INTO `tb_user` VALUES (8, 'Fish', 'lanze@comcast.net', 'Elijah Boyer', 'IFVAdhodn493khj', 2, 0);
-INSERT INTO `tb_user` VALUES (9, 'Intelligent', 'fairsash@yahoo.com.au', 'Marianne MacGyver', 'Gg679ku6THIYQpX', 2, 0);
-INSERT INTO `tb_user` VALUES (10, 'Car', '5129819640@vtext.com', 'Jakayla Oberbrunner', 'd9ZRne59o9DLu_I', 2, 0);
-INSERT INTO `tb_user` VALUES (11, 'payment', 'interac226@protonmail.com', 'Jaunita9', 'vdkKGTYdWZrm7hB', 2, 0);
-INSERT INTO `tb_user` VALUES (12, 'Incredible Wooden Mouse', 'pay.invoice12@gmail.com', 'Easter_Hauck', 'YCya73tqwx5eOD4', 2, 0);
-INSERT INTO `tb_user` VALUES (13, 'Afghanistan', 'payments@raindropsco.com', 'Fred.Yundt64', 'iW1nKEceGnhWCWl', 2, 0);
-INSERT INTO `tb_user` VALUES (14, 'mobile', 'izriahhh@gmail.com', 'Dillon.OReilly', 'CdqJcbf_2LkOoA4', 2, 0);
-INSERT INTO `tb_user` VALUES (15, 'Illinois', 'stellasharman@yahoo.com', 'Carlotta.Price', '0a276WXYqaDCcG5', 2, 0);
-INSERT INTO `tb_user` VALUES (16, 'Specialist', 'hetzerjared@gmail.com', 'Irma_Shields', 'Zy0ROQxbmNUpW2V', 2, 0);
-INSERT INTO `tb_user` VALUES (17, 'compressing', 'leroybell7602@gmail.com', 'Benny_Runolfsdottir', 'p_sQAny1PFh8GWH', 2, 0);
-INSERT INTO `tb_user` VALUES (18, 'okok', 'diluxgans@gmail.com', 'okok', 'okok', 2, 0);
-INSERT INTO `tb_user` VALUES (19, 'Rustic', 'marietta.galit@yahoo.com', 'Sonya67', 'U6HOA9sKRO6b6PB', 2, 0);
-INSERT INTO `tb_user` VALUES (20, 'Legacy', 'marcusgrey18@gmail.com', 'Anastasia_Ullrich76', '71vrY1olvUBJl_T', 2, 0);
-INSERT INTO `tb_user` VALUES (21, 'Handmade Concrete Computer', 'Rickie.Brown66@gmail.com', 'Roselyn14', 'DOI5u10tJlCB9Q_', 2, 0);
 
 -- ----------------------------
 -- Triggers structure for table tb_pesanan
