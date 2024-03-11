@@ -40,7 +40,7 @@
             <div class="error mx-auto" data-text="404">403</div>
             <p class="lead text-gray-800 mb-5">Forbidden</p>
             <p class="text-gray-500 mb-0">Anda Tidak mempunyai akses untuk membuka URL tersebut</p>
-            <a href="<?= base_url() ?>">&larr; Silahkan Login dengan benar</a>
+            <a href="<?= base_url('../') ?>">&larr; Silahkan Login dengan benar</a>
           </div>
 
         </div>
@@ -83,7 +83,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?= base_url(); ?>">Logout</a>
+          <a class="btn btn-primary" href="<?= base_url("../"); ?>">Logout</a>
         </div>
       </div>
     </div>

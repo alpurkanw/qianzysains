@@ -13,23 +13,23 @@ class Home extends CI_Controller
         // $this->load->model('m_jns_tag', 'mtag');
     }
 
+    // public function index()
+    // {
+
+    //     // $data["judul"] = "Wellcome to Qianzy";
+    //     // // return;
+    //     // // $sql_buku = " SELECT * FROM `tb_buku`
+    //     // //         ";
+    //     // // $data["buks"] =  $this->db->query($sql_buku)->result();
+
+    //     // $sql_team = " SELECT * FROM `tb_team`
+    //     //         ";
+    //     // $data["teams"] =  $this->db->query($sql_team)->result_array();
+    //     // print_r($data["teams"]);
+    //     // return;
+    //     $this->load->view('vtoko', $data);
+    // }
     public function index()
-    {
-
-        $data["judul"] = "Wellcome to Qianzy";
-        // return;
-        // $sql_buku = " SELECT * FROM `tb_buku`
-        //         ";
-        // $data["buks"] =  $this->db->query($sql_buku)->result();
-
-        $sql_team = " SELECT * FROM `tb_team`
-                ";
-        $data["teams"] =  $this->db->query($sql_team)->result_array();
-        // print_r($data["teams"]);
-        // return;
-        $this->load->view('compro/index', $data);
-    }
-    public function toko()
     {
 
         $data["judul"] = "Wellcome to Qianzy";
