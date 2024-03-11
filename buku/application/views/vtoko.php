@@ -71,22 +71,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <h5>PENCARIAN</h5>
+                        <h6>PENCARIAN</h6>
                         <hr class="my-2">
-                        <div class="input-container ">
-                            <input class="form-control" id="keyword-buku" onkeyup="searchFilter()" type="text" placeholder="Cari Judul Buku" autofocus="on">
-                            <i class="fas fa-search"></i>
+                        <div class="input-container shadow-sm">
+                            <input class="form-control " id="keyword-buku" onkeyup="searchFilter()" type="text" placeholder="Cari Judul Buku" autofocus="on">
+                            <!-- <i class="fas fa-search"></i> -->
                         </div>
                         <br>
-                        <h5>BUKU BARU</h5>
+                        <h6>BUKU BARU</h6>
                         <hr class="my-2">
-                        <div class="card mb-3" style="max-width: 540px;">
+                        <div class="card mb-3 shadow-sm">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/empty_image.png" alt="..." class="img img-bordered m-1" width="100" height="130">
+                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="120">
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body p-2">
+                                    <div class="card-body p-1 small">
                                         <h6 class="card-title">KEPERAWATAN PSIKIATRI</h6>
                                         <small>
                                             <p class="card-text">
@@ -104,26 +104,43 @@
                         <div class="row ">
                             <?php foreach ($buks as $key => $buk) {
                             ?>
-                                <div class="col-lg-3">
-                                    <div class="card ">
-                                        <img src="<?= base_url("assets/image/buku/") . $buk->gambar; ?>" class="img rounded-1 border-1" height="200">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title  h5">
-                                                <?= $buk->judul; ?>
-                                            </h5>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="<?= base_url("Home/detailProd/") . $buk->id; ?>" style="width: 100%;" class="btn  btn-outline-warning btn-block  ">Detail</a>
-                                                </div>
-                                            </div>
+
+                                <div class="col-3 px-1">
+                                    <div class="card" style="min-height: 320px;">
+                                        <div class="card-header p-2">
+                                            <img src="<?= base_url("assets/image/buku/") . $buk->gambar; ?>" class="img img-bordered  card-img-top" alt="..." style="min-height: 220px;">
                                         </div>
+
+                                        <div class="card-body small p-2">
+                                            <h6 class="card-title"><?= $buk->isbn; ?></h6>
+                                            <p class="card-text"><?= $buk->judul; ?></p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+
                                     </div>
 
                                 </div>
+
+
                             <?php } ?>
 
+                            <div class="col-lg-3">
+                                <div class="card ">
+                                    <img src="<?= base_url("assets/image/buku/") . $buk->gambar; ?>" class="img rounded-1 border-1" height="200">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title  h5">
+                                            <?= $buk->judul; ?>
+                                        </h5>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href="<?= base_url("Home/detailProd/") . $buk->id; ?>" style="width: 100%;" class="btn  btn-outline-warning btn-block  ">Detail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                            </div>
 
                         </div>
 
