@@ -54,7 +54,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h4>List Buku </h4>
                                         <div class="input-container">
-                                            <a href="<?= base_url("admin/Buku/tambah"); ?>" class="btn btn-primary">Tambah Buku</a>
+                                            <a href="<?= base_url("admin/Buku/tambah"); ?>" class="btn btn-outline-primary">Tambah Buku</a>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +83,9 @@
                                                         <td><?= $no; ?></td>
                                                         <td><?= $buk->judul; ?></td>
                                                         <td><?= number_format($buk->harga_jual); ?></td>
-                                                        <td><?= $buk->penulis; ?></td>
+                                                        <td>
+                                                            <a href="<?= base_url("admin/Buku/detail/") . $buk->id; ?>" class="btn btn-primary btn-sm">Tambahkan</a>
+                                                        </td>
                                                         <td>
                                                             <a href="<?= base_url("admin/Buku/detail/") . $buk->id; ?>" class="btn btn-primary btn-sm">Detail</a>
 
@@ -153,34 +155,18 @@
 
 
 
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Penulis</label>
-                                                            <input type="text" class="form-control" name="penulis">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Editor</label>
-                                                            <input type="text" class="form-control" name="editor">
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
 
                                                 <div class="row">
 
                                                     <div class="col">
                                                         <div class="form-group ">
                                                             <label for="harga_jual">Tanggal Terbit</label>
-                                                            <input type="text" class="form-control" name="tgl_terbit">
+                                                            <input type="date" class="form-control" name="tgl_terbit">
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group ">
-                                                            <label for="harga_beli">Ukuran</label>
+                                                            <label for="harga_beli">Ukuran (Dimensi buku dalam cm)</label>
                                                             <input type="text" class="form-control " name="ukuran">
                                                         </div>
                                                     </div>
@@ -542,15 +528,15 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-4">
                                             <div class="row">
                                                 <div class="col">
-                                                    <img src="<?= base_url("assets/image/buku/") . $foto; ?>" class="img img-bordered img-rounded " width="400px" alt="" srcset="">
+                                                    <img src="<?= base_url("assets/image/buku/") . $foto; ?>" class="img img-bordered img-rounded " height="400px" alt="" srcset="">
 
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-7">
+                                        <div class="col-8">
                                             <div class="row">
                                                 <div class="col">
                                                     <span class="font-weight-bold h4"><?= $buku["judul"]; ?></span>
