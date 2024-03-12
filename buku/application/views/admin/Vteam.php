@@ -188,7 +188,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group text-right">
-                                                    <a href="https://kiosprogram.com/admin/" class="btn  btn-secondary shadow-sm  mb-2 "> Batal</a>
+                                                    <a href="http://localhost/devel/qianzysains/buku/admin/Team" class="btn  btn-secondary shadow-sm  mb-2 "> Batal</a>
                                                     <button type="Submit" class="btn btn-primary shadow-sm  mb-2 "><i class="fas fa-plus " onclick="return submit_data_(event);"></i> Submit</button>
                                                 </div>
                                             </div>
@@ -224,7 +224,8 @@
                                                 ($team["gambar"]) ? $foto = $team["gambar"] : $foto = "empty_image.png";
                                                 // echo $foto;
                                                 ?>
-                                                <img src="<?= base_url("assets/image/team/") . $foto; ?>"><br>
+                                                
+                                                <img src="<?= base_url("assets/image/team/") . $foto; ?>" height="300"><br>
                                                 <div class="form-group">
                                                     <label for="file_gambar">Ubah Gambar </label>
                                                     <input type="file" class="form-control-file" name="file_gambar" placeholder="file gambar">
@@ -295,7 +296,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group text-right">
-                                                    <a href="https://kiosprogram.com/admin/" class="btn  btn-secondary shadow-sm  mb-2 "> Batal</a>
+                                                    <a href="http://localhost/devel/qianzysains/buku/admin/Team" class="btn  btn-secondary shadow-sm  mb-2 "> Batal</a>
                                                     <button type="Submit" class="btn btn-primary shadow-sm  mb-2 "><i class="fas fa-plus " onclick="return submit_data_(event);"></i> Submit</button>
                                                 </div>
                                             </div>

@@ -54,7 +54,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h4>List Kategori </h4>
                                         <div class="input-container">
-                                            <a href="<?= base_url("admin/Kategori/tambah"); ?>" class="btn btn-primary">Tambah Kategori</a>
+                                            <a href="<?= base_url("admin/Kategori/tambah"); ?>" class="btn btn-outline-primary">Tambah Kategori</a>
                                         </div>
                                     </div>
                                 </div>

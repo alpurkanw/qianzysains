@@ -83,7 +83,7 @@
                         <div class="card mb-3 shadow-sm">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="120">
+                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="100">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body p-1 small">
@@ -106,15 +106,15 @@
                             ?>
 
                                 <div class="col-3 px-1">
-                                    <div class="card" style="min-height: 320px;">
+                                    <div class="card" style="min-height: 300px;">
                                         <div class="card-header p-2">
                                             <img src="<?= base_url("assets/image/buku/") . $buk->gambar; ?>" class="img img-bordered  card-img-top" alt="..." style="min-height: 220px;">
                                         </div>
 
                                         <div class="card-body small p-2">
-                                            <h6 class="card-title"><?= $buk->isbn; ?></h6>
-                                            <p class="card-text"><?= $buk->judul; ?></p>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            <h6 class="card-title mb-1"><?= $buk->isbn; ?></h6>
+                                            <p class="mb-1"><?= $buk->judul; ?></p>
+                                            <a href="#" class="btn  btn-primary">Go somewhere</a>
                                         </div>
 
                                     </div>
