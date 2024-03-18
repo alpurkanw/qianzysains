@@ -69,17 +69,12 @@
         <!-- ======= Portfolio Details Section ======= -->
         <section id="portfolio-details" class="portfolio-details mt-5">
             <div class="container">
+                <h6>BUKU BARU</h6>
+                <hr class="my-2">
                 <div class="row">
                     <div class="col-3">
-                        <h6>PENCARIAN</h6>
-                        <hr class="my-2">
-                        <div class="input-container shadow-sm">
-                            <input class="form-control " id="keyword-buku" onkeyup="searchFilter()" type="text" placeholder="Cari Judul Buku" autofocus="on">
-                            <!-- <i class="fas fa-search"></i> -->
-                        </div>
-                        <br>
-                        <h6>BUKU BARU</h6>
-                        <hr class="my-2">
+
+
                         <div class="card mb-3 shadow-sm">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
@@ -100,7 +95,116 @@
                         </div>
 
                     </div>
-                    <div class="col-9">
+                    <div class="col-3">
+
+
+                        <div class="card mb-3 shadow-sm">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="100">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-1 small">
+                                        <h6 class="card-title">KEPERAWATAN PSIKIATRI</h6>
+                                        <small>
+                                            <p class="card-text">
+                                                ISBN: 978-623-195-859-4 <br>
+                                                Terbit: March 2024</p>
+                                            <p class="card-text"></p>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+
+
+                        <div class="card mb-3 shadow-sm">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="100">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-1 small">
+                                        <h6 class="card-title">KEPERAWATAN PSIKIATRI</h6>
+                                        <small>
+                                            <p class="card-text">
+                                                ISBN: 978-623-195-859-4 <br>
+                                                Terbit: March 2024</p>
+                                            <p class="card-text"></p>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+
+
+                        <div class="card mb-3 shadow-sm">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="100">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-1 small">
+                                        <h6 class="card-title">KEPERAWATAN PSIKIATRI</h6>
+                                        <small>
+                                            <p class="card-text">
+                                                ISBN: 978-623-195-859-4 <br>
+                                                Terbit: March 2024</p>
+                                            <p class="card-text"></p>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="col-12">
+                            <h6>PENCARIAN</h6>
+                            <hr class="my-2">
+                            <div class="input-container shadow-sm">
+                                <input class="form-control " id="keyword-buku" onkeyup="searchFilter()" type="text" placeholder="Cari Judul Buku" autofocus="on">
+                                <!-- <i class="fas fa-search"></i> -->
+                            </div>
+                            <hr class="my-2">
+                            <br>
+                            <h6>BUKU BARU</h6>
+                            <hr class="my-2">
+                            <div class="card mb-3 shadow-sm">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="http://localhost/devel/qianzysains/buku/assets/image/buku/coverbook_fintech.jpeg" alt="..." class="img img-bordered m-1" width="100" height="100">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-1 small">
+                                            <h6 class="card-title">KEPERAWATAN PSIKIATRI</h6>
+                                            <small>
+                                                <p class="card-text">
+                                                    ISBN: 978-623-195-859-4 <br>
+                                                    Terbit: March 2024</p>
+                                                <p class="card-text"></p>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-12">
                         <div class="row ">
                             <?php foreach ($buks as $key => $buk) {
                             ?>
