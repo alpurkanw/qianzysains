@@ -68,7 +68,7 @@
                         <!-- /.col -->
                         <div class="col text-right">
                             <button type="submit" class="btn btn-primary btn-block">Log In</button>
-
+                            <a href="<?= base_url(""); ?>" class="btn btn-secondary btn-block">Kembali</a>
                         </div>
                         <!-- /.col -->
                     </div>
