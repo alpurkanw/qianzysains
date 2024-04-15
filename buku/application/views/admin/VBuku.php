@@ -177,12 +177,19 @@
                                                     <div class="col">
                                                         <div class="form-group ">
                                                             <label for="harga_jual">Stok</label>
-                                                            <input type="text" class="form-control" name="stok">
+                                                            <select class="custom-select custom-select" name="stok">
+                                                                <option value="0" selected="">Status Stok</option>
+
+                                                                <option value="1">Ada</option>
+                                                                <option value="0">Tidak Tersedia</option>
+
+
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group ">
-                                                            <label for="harga_jual">Berat</label>
+                                                            <label for="harga_jual">Berat( Dalam Kg)</label>
                                                             <input type="text" class="form-control " name="berat">
                                                         </div>
                                                     </div>
@@ -528,7 +535,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-4">
+                                        <div class="col-12">
                                             <div class="row">
                                                 <div class="col">
                                                     <img src="<?= base_url("assets/image/buku/") . $foto; ?>" class="img img-bordered img-rounded " height="400px" alt="" srcset="">
@@ -536,7 +543,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-8">
+                                    </div>
+
+                                    <br>
+                                    <div class="row">
+
+                                        <div class="col-12">
                                             <div class="row">
                                                 <div class="col">
                                                     <span class="font-weight-bold h4"><?= $buku["judul"]; ?></span>
@@ -640,6 +652,9 @@
     </div>
     <!-- ./wrapper -->
 
+
+
+
     <!-- jQuery -->
     <script src="<?= base_url("assets/") ?>plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -667,7 +682,7 @@
 
             //Date range picker
 
-            $('#list_lap_bar').DataTable();
+            // $('#list_lap_bar').DataTable();
 
         });
     </script>

@@ -59,6 +59,10 @@ class Buku extends CI_Controller
         // if (empty($_FILES['file_gambar']['name'])) {
         // echo "kosong";
 
+        // echo str_replace("-", "", $this->input->post('tgl_terbit'));
+        // return;
+
+
         // jika gambar ada 
         if ($_FILES['file_gambar']['name']) {
             $config['upload_path'] = './assets/image/buku/';
@@ -81,7 +85,7 @@ class Buku extends CI_Controller
             "editor" => $this->input->post('editor'),
             "isbn" => floatval($this->input->post('isbn')),
             "jum_stok" => floatval($this->input->post('stok')),
-            "tgl_terbit" => floatval($this->input->post('tgl_terbit')),
+            "tgl_terbit" => str_replace("-", "", $this->input->post('tgl_terbit')),
             "ukuran" => $this->input->post('ukuran'),
             "harga_jual" => $this->input->post('harga_jual'),
             "kategori" => $this->input->post('kateg'),

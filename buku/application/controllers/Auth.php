@@ -156,7 +156,7 @@ class Auth extends CI_Controller
 
         session_destroy();
         // session_destroy();
-        redirect('Home/toko');
+        redirect('../');
     }
 
     public function register()
