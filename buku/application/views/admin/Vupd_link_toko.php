@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="<?= base_url("assets/") ?>plugins/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?= base_url("assets/") ?>plugins/buttons.dataTables.min.css">
 
+
+
     <!-- daterange picker -->
     <link rel="stylesheet" href="<?= base_url("assets/") ?>datepick/css/bootstrap-datepicker.min.css">
 
@@ -49,27 +51,17 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card card-outline card-primary">
-                                <div class="card-header p-1">
 
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h4>List Buku </h4>
-                                        <div class="input-container">
-                                            <a href="<?= base_url("admin/Buku/tambah"); ?>" class="btn btn-primary">Tambah Buku</a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- /.card-header -->
                                 <div class="card-body p-2">
                                     <!-- <button class="btn btn-primary btn_export">tes</button> -->
-
-                                    <?= $this->session->flashdata('pesan'); ?>
                                     <div class="tes_data">
-                                        <table id="list_buku" class="table table-sm table-bordered table-striped  ">
+                                        <table class="table table-sm table-bordered table-striped listbuku ">
                                             <thead>
                                                 <tr role="row">
                                                     <th>No</th>
                                                     <th>ID - Judul Buku</th>
-                                                    <th>Tanggal terbit</th>
+                                                    <th></th>
                                                     <th>ISBN</th>
                                                     <th></th>
                                                     <!-- <th></th> -->
@@ -96,7 +88,7 @@
                                                             <a href="<?= base_url("admin/Buku/tambahPenulis/") . $buk->id; ?>" class="btn btn-primary btn-sm">Tambahkan</a>
                                                         </td> -->
                                                         <td>
-                                                            <a href="<?= base_url("admin/Buku/detail/") . $buk->id; ?>" class="btn btn-primary btn-sm">Detail</a>
+                                                            <a href="<?= base_url("admin/Toko/tambahlink/") . $buk->id; ?>" class="btn btn-primary btn-sm">Upd. Link</a>
 
                                                         </td>
 
@@ -110,8 +102,6 @@
                                         </table>
                                     </div>
                                 </div>
-
-
                                 <!-- /.card-body -->
                             </div>
                         </div>
@@ -125,13 +115,13 @@
 
                             <div class="card shadow card-outline card-primary ">
                                 <div class="card-header py-2">
-                                    <h6 class="font-weight-bold text-primary ">Form Tambah Buku</h6>
+                                    <h6 class="font-weight-bold text-primary ">Update Link Toko</h6>
                                 </div>
                                 <div class="card-body">
 
-                                    <form method="POST" action="<?= base_url("admin/Buku"); ?>/tambah_proses" enctype="multipart/form-data">
+                                    <form method="POST" action="<?= base_url("admin/Toko/updatelinkproses"); ?>">
 
-
+                                        <input type="hidden" name="id_buku" value="<?= $buku->id; ?>">
 
                                         <div class="row">
 
@@ -139,170 +129,51 @@
 
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="file_gambar">Gambar Buku</label>
-                                                            <input type="file" class="form-control-file" name="file_gambar" placeholder="file gambar">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="row">
-
-                                                    <div class="col">
                                                         <div class="form-group ">
-                                                            <label for="inputEmail4">Judul Buku</label>
-                                                            <input type="text" class="form-control" name="judul_buku" autofocus="">
-
+                                                            <label for="harga_jual">Judul Buku</label>
+                                                            <textarea class="form-control " disabled rows="3" name="link_shoope"><?= $buku->judul; ?>
+                                                            </textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">ISBN</label>
-                                                            <input type="text" class="form-control" name="isbn">
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-
-
-
-                                                <div class="row">
-
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Tanggal Terbit</label>
-                                                            <input type="date" class="form-control" name="tgl_terbit">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_beli">Ukuran (Dimensi buku dalam cm)</label>
-                                                            <input type="text" class="form-control " name="ukuran">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Stok</label>
-                                                            <select class="custom-select custom-select" name="stok">
-
-                                                                <option value="1" selected>Ada</option>
-                                                                <option value="0">Tidak Tersedia</option>
-
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Berat( Dalam Kg)</label>
-                                                            <input type="text" class="form-control " name="berat">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="kateg">Kategori</label>
-                                                            <select class="custom-select custom-select" name="kateg">
-                                                                <option value="0" selected="">Pilih Kategori</option>
-                                                                <?php
-
-                                                                foreach ($kategs as $key => $kateg) {
-                                                                ?>
-                                                                    <option value="<?= $kateg->id; ?>"><?= $kateg->kategori; ?></option>
-                                                                <?php } ?>
-
-                                                            </select>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Harga jual</label>
-                                                            <input type="text" class="form-control text-right" name="harga_jual">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-
-
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="st_cetak">Versi Cetak</label>
-                                                            <select class="custom-select custom-select" name="st_cetak">
-                                                                <option value="0" selected="">Pilih Ketersediaan</option>
-                                                                <option value="0">Kosong</option>
-                                                                <option value="1">Ada</option>
-                                                            </select>
-
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="st_digital">Versi Digital</label>
-                                                            <select class="custom-select custom-select" name="st_digital">
-                                                                <option value="0" selected="">Pilih Ketersediaan</option>
-                                                                <option value="0">Kosong</option>
-                                                                <option value="1">Ada</option>
-                                                            </select>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="row" hidden>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Link Toko Shoope</label>
-                                                            <textarea class="form-control " rows="3" name="link_shoope"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group ">
-                                                            <label for="harga_jual">Link Toko Google</label>
-                                                            <textarea class="form-control " rows="3" name="link_bukalapak"></textarea>
-                                                        </div>
-                                                    </div>
-
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col" hidden>
+                                                    <div class="col">
+                                                        <div class="form-group ">
+                                                            <label for="harga_jual">Link Toko Shopee</label>
+                                                            <textarea class="form-control " rows="3" name="link_shopee"><?= trim($buku->link_shopee); ?>
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
                                                         <div class="form-group ">
                                                             <label for="harga_jual">Link Tokopedia</label>
-                                                            <textarea class="form-control " rows="3" name="link_toped"></textarea>
+                                                            <textarea class="form-control " rows="3" name="link_toped"><?= $buku->link_tokopedia; ?>
+                                                            </textarea>
                                                         </div>
 
                                                     </div>
+
+                                                </div>
+                                                <div class="row">
                                                     <div class="col">
                                                         <div class="form-group ">
-                                                            <label for="harga_jual">Sinopsis Buku</label>
-                                                            <textarea class="form-control " rows="3" name="ket"></textarea>
+                                                            <label for="harga_jual">Link Toko Bukalapak</label>
+                                                            <textarea class="form-control link_bukalapak " rows="3" name="link_bukalapak"><?= $buku->link_bukalapak; ?>
+                                                            </textarea>
                                                         </div>
                                                     </div>
+
                                                 </div>
 
 
                                                 <div class="form-group text-right">
-                                                    <a href="<?= base_url("admin/Buku"); ?>" class="btn  btn-secondary shadow-sm  mb-2 "> Batal</a>
-                                                    <button type="Submit" class="btn btn-primary shadow-sm  mb-2 "><i class="fas fa-plus " onclick="return submit_data_Buku(event);"></i> Submit</button>
+                                                    <a href="<?= base_url("admin/Toko/opnListBuku"); ?>" class="btn  btn-secondary shadow-sm  mb-2 ">Kembali</a>
+                                                    <button type="Submit" class="btn btn-primary shadow-sm  mb-2 "> Update</button>
                                                 </div>
 
                                             </div>
-
-
 
                                         </div>
                                     </form>
@@ -763,6 +634,16 @@
     <!-- DataTables -->
     <script src="<?= base_url("assets/") ?>plugins/jquery.dataTables.min.js"></script>
 
+    <!-- DataTables
+    <script src="<?= base_url("assets/") ?>plugins/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url("assets/") ?>plugins/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url("assets/") ?>plugins/jszip.min.js"></script>
+    <script src="<?= base_url("assets/") ?>plugins/pdfmake.min.js"></script>
+    <script src="<?= base_url("assets/") ?>plugins/vfs_fonts.js"></script>
+    <script src="<?= base_url("assets/") ?>plugins/buttons.html5.min.js"></script>
+    <script src="<?= base_url("assets/") ?>plugins/buttons.print.min.js"></script> -->
+
+
 
 
 
@@ -778,7 +659,10 @@
 
             //Date range picker
 
-            $('#list_buku').DataTable();
+            $('.listbuku').DataTable();
+
+
+
 
         });
     </script>

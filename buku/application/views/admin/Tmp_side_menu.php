@@ -60,8 +60,17 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="<?= base_url("admin/Toko/opnListBuku") ?>" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            TAMBAH LINK TOKO
+                        </p>
+                    </a>
+                </li>
 
 
+                <hr>
 
                 <li class="nav-item">
                     <a href="<?= base_url("Auth/logout") ?>" class="nav-link">

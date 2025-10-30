@@ -38,20 +38,25 @@
 
 <body>
 
+
+
+
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top header-inner-pages">
-        <div class="container d-flex align-items-center justify-content-lg-between">
+    <header id="header" class="fixed-top  header-inner-pages">
+        <div class="container  d-flex align-items-center justify-content-lg-between">
 
             <h1 class="logo me-auto me-lg-0">
-                <a href="<?= base_url(); ?>">Qianzy</a>
+                <a href="../">Qianzy</a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="<?= base_url('assets/compro/assets/'); ?>img/logo.png" alt="" class="img-fluid"></a>-->
 
+            <div class="row">
+                <div class="col">
+                    <a href="<?= base_url("Home"); ?>" class="btn btn-outline-primary">Kembali</a>
+                </div>
+            </div>
 
-
-            <a href="<?= base_url('Home'); ?>" class="get-started-btn scrollto">
-                Kembali</a>
 
         </div>
     </header><!-- End Header -->
@@ -63,7 +68,7 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>Product Detail</h2>
+                    <h2>Detail Buku</h2>
 
                 </div>
 
@@ -73,94 +78,140 @@
         <!-- ======= Portfolio Details Section ======= -->
         <section id="portfolio-details" class="portfolio-details">
             <div class="container">
-
+                <!-- <?php print_r($buku["judul"]); ?> -->
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-md-5 col-sm-12">
                         <div class="swiper-slide text-center ">
                             <img class="img img-responsive shadow " style="max-width: 450px;" src="<?= base_url("assets/image/buku/") . $buku["gambar"]; ?>" alt="">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-md-7 col-sm-12">
 
                         <div class="card shadow card-outline card-primary ">
 
                             <div class="card-body">
+
                                 <div class="row">
 
-                                    <div class="col">
-                                        <div class="row">
-                                            <div class="col">
-                                                <span class="font-weight-bold h4"><?= $buku["judul"]; ?></span>
+                                    <div class="col-12">
 
-                                            </div>
-                                        </div>
-                                        <hr>
+                                        <input type="hidden" id="id_buku" value="<?= $buku["id"]; ?>">
+                                        <h2><?= $buku["judul"]; ?></h2>
+                                        <hr class="my-3">
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col-3">
                                                 <strong>Penulis :</strong>
-                                                <p class="mb-0"><?= $buku["penulis"]; ?></p>
-
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 Penulis">sdsds</p>
                                             </div>
                                         </div>
-                                        <hr>
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col-3">
                                                 <strong>Editor :</strong>
-                                                <p class="mb-0"><?= $buku["editor"]; ?></p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 Editor">sdsds</p>
                                             </div>
                                         </div>
-                                        <hr>
-                                        <strong>Deskripsi </strong>
-                                        <div class="row mt-2">
-                                            <div class="col">
-                                                <p class="text-left"><?= $buku["desk"]; ?></p>
-                                                <table style="width: 100%;">
-                                                    <tr>
-                                                        <td>ISBN :</td>
-                                                        <td><?= $buku["isbn"]; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tanggal Terbit :</td>
-                                                        <td><?= $buku["tgl_terbit"]; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Ukuran</td>
-                                                        <td><?= $buku["ukuran"]; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Stok :</td>
-                                                        <td><?= $buku["jum_stok"]; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Berat :</td>
-                                                        <td><?= $buku["berat"]; ?> Kg</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Versi Cetak :</td>
-                                                        <td><?= ($buku["versi_cetak"] == 1) ? "Ada" : "Tidak ada"; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Versi Digital :</td>
-                                                        <td><?= ($buku["versi_digital"] == 1) ? "Ada" : "Tidak ada";  ?></td>
-                                                    </tr>
-                                                </table>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>ISBN :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 ISBN"><?= $buku["isbn"]; ?></p>
                                             </div>
                                         </div>
-                                        <hr>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Tanggal Terbit :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 tgl_terbit"><?= $buku["tgl_terbit"]; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Ukuran :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 Ukuran"><?= $buku["ukuran"]; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Stok :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 Stok"><?= $buku["jum_stok"]; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Berat :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 Berat"><?= $buku["berat"]; ?> Kg</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Versi Cetak :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 cetak"><?= ($buku["versi_cetak"] == 1) ? "Ada" : "Tidak ada"; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Versi Digital :</strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 digital"><?= ($buku["versi_digital"] == 1) ? "Ada" : "Tidak ada"; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <strong>Price : </strong>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="mb-0 digital"><strong>Rp </strong><?= ($buku["harga_jual"]) ? number_format($buku["harga_jual"]) : "Belum diSet"; ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+
+                                    <div class="col-3">
+
+                                        <strong>Sinopsis Buku :</strong>
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <p class=" Deskripsi"><?= $buku["desk"]; ?>
+                                        </p>
 
                                     </div>
                                 </div>
 
-                                <strong>Pembelian</strong> <br>
-                                <div class="row mt-2">
-                                    <div class="col">
-                                        <a href="https://api.whatsapp.com/send?text=halomin" target="_blank" title="Chat Penjual" class="btn  btn-success">Lewat Whatsapp <i class="fa fa-whatsapp"></i></a>
+                                <hr>
+
+                                <div class="row mb-2">
+                                    <div class="col-3 ">
+                                        <strong>Toko Online Kami :</strong>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col">
-                                        <a href="<?= $buku["link_shoope"]; ?>" style="background-color: rgb(251,83,48);" target="_blank" title="Pembelian Via Shopee" class="btn btn-success">Lewat Shopee </a>
-                                    </div>
-                                    <div class="col">
-                                        <a href="<?= $buku["link_tokopedia"]; ?>" style="background-color: rgb(29,199,100);" target="_blank" title="Pembelian Via Tokopedia" class="btn btn-success">Lewat Tokopedia </a>
+                                        <a href="<?= $buku["link_tokopedia"]; ?>" class="btn mb-2 " target="_parent" style="background-color: #42B549;">Tokopedia</a>
+                                        <br>
+                                        <a href="<?= $buku["link_shopee"]; ?>" target="_parent" class="btn btn-danger mb-2">Shopee</a>
+                                        <br>
+                                        <a href="<?= $buku["link_bukalapak"]; ?>" target="_parent" class="btn btn-danger">Bukalapak</a>
                                     </div>
                                 </div>
 
@@ -193,6 +244,12 @@
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
     <!-- Vendor JS Files -->
     <script src="<?= base_url('assets/compro/assets/'); ?>vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="<?= base_url('assets/compro/assets/'); ?>vendor/aos/aos.js"></script>
@@ -204,6 +261,38 @@
 
     <!-- Template Main JS File -->
     <script src="<?= base_url('assets/compro/assets/'); ?>js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            // alert();
+
+            var id_buku = $("#id_buku").val();
+            // alert(id_buku);
+            // return;
+
+            var url = '<?= base_url("Home/ambilPenulis/") ?>' + id_buku;
+            // alert(url);
+            // return;
+
+
+            var penulis = "";
+            var editor = "";
+            $.get(url, function(data) {
+
+                // {"Editor":["alpurkan2"],"Penulis":["tesss3","nma","alpurkan2"]}
+
+                var jenis = JSON.parse(data)
+                penulis = (jenis.Penulis != "") ? jenis.Penulis : "Data Penulis belum Diinput";
+                editor = (jenis.Editor != "") ? jenis.Editor : "Data Editor belum Diinput";
+                // alert(jenis.Penulis)
+                $(".Penulis ").text(penulis);
+                $(".Editor ").text(editor);
+            })
+
+
+        })
+    </script>
 
 </body>
 

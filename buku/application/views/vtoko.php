@@ -16,9 +16,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="<?= base_url('assets/compro/assets/'); ?>vendor/aos/aos.css" rel="stylesheet">
@@ -104,24 +103,25 @@
                             <?php foreach ($buks as $key => $buk) {
                             ?>
 
+                                <div class="col-md-3 col-sm-12 mb-2 px-1 item_buku" data-id="<?= $buk->id; ?>" data-toggle="modal" data-target="#exampleModal" data-gambar="<?= $buk->gambar; ?>" data-judul="<?= strtoupper($buk->judul); ?>" data-editor="<?= $buk->editor; ?>" data-jum_stok="<?= $buk->jum_stok; ?>" data-isbn="<?= $buk->isbn; ?>" data-tgl_terbit="<?= $buk->tgl_terbit; ?>" data-ukuran="<?= $buk->ukuran; ?>" data-harga_jual="<?= $buk->harga_jual; ?>" data-kategori="<?= $buk->kategori; ?>" data-berat="<?= $buk->berat; ?>" data-versi_cetak="<?= $buk->versi_cetak; ?>" data-versi_digital="<?= $buk->versi_digital; ?>" data-desk="<?= $buk->desk; ?>">
+                                    <a href="<?= base_url('Home/detailBuku/') . $buk->id; ?>">
+                                        <div class="card border-0" style="min-height: auto;">
+                                            <div class="card-header shadow-sm p-2 text-center">
+                                                <img src="<?= base_url("assets/image/buku/") . $buk->gambar; ?>" class="img mx-4 img-bordered  card-img-top " alt="..." style="height: 300px; width:220px" <img src="gambar-buku.jpg" loading="lazy">
+                                                >
+                                                <!-- height="100" -->
+                                            </div>
 
-                                <div class="col-3 px-1 item_buku" data-toggle="modal" data-target="#exampleModal" data-gambar="<?= $buk->gambar; ?>" data-judul="<?= strtoupper($buk->judul); ?>" data-editor="<?= $buk->editor; ?>" data-jum_stok="<?= $buk->jum_stok; ?>" data-isbn="<?= $buk->isbn; ?>" data-tgl_terbit="<?= $buk->tgl_terbit; ?>" data-ukuran="<?= $buk->ukuran; ?>" data-harga_jual="<?= $buk->harga_jual; ?>" data-kategori="<?= $buk->kategori; ?>" data-berat="<?= $buk->berat; ?>" data-versi_cetak="<?= $buk->versi_cetak; ?>" data-versi_digital="<?= $buk->versi_digital; ?>" data-desk="<?= $buk->desk; ?>">
-                                    <div class="card border-0" style="min-height: auto;">
-                                        <div class="card-header shadow-sm p-2 text-center">
-                                            <img src="<?= base_url("assets/image/buku/") . $buk->gambar; ?>" class="img mx-4 img-bordered  card-img-top" alt="..." style="height: 300px; width:220px">
-                                            <!-- height="100" -->
+                                            <div class="card-body small p-2 text-dark">
+                                                <h6 class="card-title mb-1"><?= $buk->isbn; ?> </h6>
+                                                <h6 class="font-weight-bold mb-1"><?= strtoupper($buk->judul); ?> </h6>
+                                                <!-- <a href="#" class="btn  btn-primary">Go somewhere</a> -->
+                                            </div>
+
                                         </div>
 
-                                        <div class="card-body small p-2">
-                                            <h6 class="card-title mb-1"><?= $buk->isbn; ?> </h6>
-                                            <h6 class="font-weight-bold mb-1"><?= strtoupper($buk->judul); ?> </h6>
-                                            <!-- <a href="#" class="btn  btn-primary">Go somewhere</a> -->
-                                        </div>
-
-                                    </div>
-
+                                    </a>
                                 </div>
-
 
                             <?php } ?>
 
@@ -134,7 +134,7 @@
 
 
 
-                <div class="row mt-5">
+                <div class="row mt-5" hidden>
                     <div class="col">
 
                         <h6>BUKU BARU</h6>
@@ -257,14 +257,14 @@
             <div class="modal-content ">
                 <div class="card modal-dialog-scrollable">
                     <div class="card-header text-center">
-
-                        <img src="#" class="img gambar" height="600" width="400">
+                        <h3 class="h3 font-weight-bold judul text-right">Card title that wraps to a new line</h3>
+                        <hr>
+                        <img src="#" class="img gambar" height="550" width="400">
                     </div>
                     <div class="card-body">
-                        <h3 class="h3 font-weight-bold judul text-right">Card title that wraps to a new line</h3>
 
                         <div class="row">
-                            <hr>
+
                             <div class="col-12">
 
 
@@ -370,10 +370,8 @@
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
-    <!-- Vendor JS Files -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 
@@ -391,35 +389,8 @@
     <script>
         $(document).ready(function() {
             var path = '<?= base_url("assets/image/buku/") ?>';
-            $(".item_buku").on("click", function() {
+            var id_buku = "";
 
-                var tgl_terbit = $(this).data("tgl_terbit").toString();
-
-                $('#mdl_buku .gambar').attr('src', path + $(this).data("gambar"));
-
-
-                $("#mdl_buku .judul").text($(this).data("judul"));
-                $("#mdl_buku .Editor").text($(this).data("editor"));
-                $("#mdl_buku .tgl_terbit").text(tgl_terbit.substring(0, 4) + "-" + tgl_terbit.substring(4, 6) + "-" + tgl_terbit.substring(6));
-                $("#mdl_buku .Ukuran ").text($(this).data("ukuran"));
-                $("#mdl_buku .Stok ").text(($(this).data("jum_stok") > 0) ? "Tersedia" : "Tidak Tersedia");
-                $("#mdl_buku .Berat ").text($(this).data("berat") + " Kg");
-                $("#mdl_buku .cetak").text(($(this).data("versi_cetak") > 0) ? "Tersedia" : "Tidak Tersedia");
-                $("#mdl_buku .digital").text(($(this).data("versi_digital") > 0) ? "Tersedia" : "Tidak Tersedia");
-                $("#mdl_buku .Deskripsi").text($(this).data("desk"));
-                // $("#mdl_buku .editor").val($(this).data("editor"));
-                // $("#mdl_buku .editor").val($(this).data("editor"));
-                // $("#mdl_buku .editor").val($(this).data("editor"));
-
-                $("#mdl_buku").modal("toggle");
-            });
-
-
-            // $('#exampleModal').on('show.bs.modal', function(event) {
-            //     var buku = $(this).data('gambar') // Button that triggered the modal
-            //     var gambar = button.data('gambar') // Extract info from data-* attributes
-            //     alert(buku)
-            // })
 
         })
     </script>

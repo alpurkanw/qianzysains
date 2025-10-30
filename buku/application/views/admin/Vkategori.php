@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <form method="POST" action="<?= base_url("admin/Kategori/tambah_proses"); ?>" enctype="multipart/form-data">
+                                    <form method="POST" action="<?= base_url("admin/Kategori/tambah_proses"); ?>">
 
 
                                         <div class="row">

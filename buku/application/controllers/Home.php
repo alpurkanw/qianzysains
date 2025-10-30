@@ -47,51 +47,68 @@ class Home extends CI_Controller
 
             $this->load->view('vtoko', $data);
         }
-
-
-
-        // print_r($_POST); // Mencetak semua data POST
-        // echo $_REQUEST["kunci"] . " - " . $this->security->get_csrf_hash(); // Mencetak semua data POST
-
-        // if ($_REQUEST["kunci"] !== $this->security->get_csrf_hash()) {
-        //     echo "tidak valid" . $this->input->post("csrf_name");
-        //     // Token CSRF tidak valid, lakukan penanganan di sini
-        //     // Contoh: tampilkan pesan kesalahan atau tolak permintaan
-        // } else {
-        //     echo "valid valid" . $this->input->post("csrf_name");
-        //     // Token CSRF valid, lanjutkan dengan pemrosesan data
-        // }
-
-        // return;
-        // if( )
-
-        // echo $this->input->method("kunci_csrf");
-        // return;
-        // // . "-" . $this->security->get_csrf_hash();
-        // if ($this->input->post('csrf_name') !== $this->security->get_csrf_hash()) {
-        //     echo "tidak valid" . $this->input->post("csrf_name");
-        //     // Token CSRF tidak valid, lakukan penanganan di sini
-        //     // Contoh: tampilkan pesan kesalahan atau tolak permintaan
-        // } else {
-        //     echo "valid valid" . $this->input->post("csrf_name");
-        //     // Token CSRF valid, lanjutkan dengan pemrosesan data
-        // }
-
-        // return;
-        // $data["judul"] = "List Buku";
-
-        // $keyw = $this->input->post('keyw');
-        // // return;
-        // $sql = " SELECT * FROM `tb_buku` where judul like '%$keyw%'
-        //         ";
-        // // echo $sql;
-        // // return;
-        // $data["buks"] =  $this->db->query($sql)->row_array();
-        // // $data["ktgs"] = $this->db->get('tbl_kateg')->result();
-        // // $data["loks"] = $this->db->get('tbl_lok')->result();
-        // $this->load->view('vtoko', $data);
     }
 
+    public function detailBuku($id_buku)
+    {
+        $data = [];
+        // echo $id_buku;
+
+        $querydata = "  SELECT * FROM `tb_buku` where id = '$id_buku' ";
+        $ret  =  $this->db->query($querydata)->result_array();
+
+        if (count($ret) == 0) {
+            echo '
+                                <div class="row">
+                                    <div class="col text-center">
+                                        Link Toko belum Tersedia. <br>
+                                        <a href="' . base_url("Home") . '">Kembali</a>
+                                    </div>
+                                </div>
+            ';
+            return;
+        } else {
+            $data["buku"] = $ret[0];
+            $this->load->view('VdetailProd', $data);
+        }
+
+
+
+
+        // if ($data["buku"] == "") {
+        //     echo "Data Buku Tidak Ditemukan";
+        // }
+
+
+        // print_r($data["buku"]);
+        // return;
+
+
+    }
+
+
+    public function ambilPenulis($id_buku)
+    {
+        $data = [];
+
+        $querydata = " SELECT * FROM tb_penulis where  id_buku = $id_buku ";
+        $result  =  $this->db->query($querydata)->result_array();
+
+        $data["Penulis"] = [];
+        $data["Editor"] = [];
+        foreach ($result as $key => $tm) {
+            // $editor[] = $tm["nama_team"];
+
+            if ($tm["jenis"] == 'Penulis') {
+                $data["Penulis"][] = $tm["nama_team"];
+            } else {
+                $data["Editor"][] = $tm["nama_team"];
+            }
+        }
+
+        echo json_encode($data);
+        return;
+    }
     // public function detailProd($id)
     // {
 
@@ -120,6 +137,48 @@ class Home extends CI_Controller
     //     // $data["loks"] = $this->db->get('tbl_lok')->result();
     //     $this->load->view('VteamDetail', $data);
     // }
+
+
+    // print_r($_POST); // Mencetak semua data POST
+    // echo $_REQUEST["kunci"] . " - " . $this->security->get_csrf_hash(); // Mencetak semua data POST
+
+    // if ($_REQUEST["kunci"] !== $this->security->get_csrf_hash()) {
+    //     echo "tidak valid" . $this->input->post("csrf_name");
+    //     // Token CSRF tidak valid, lakukan penanganan di sini
+    //     // Contoh: tampilkan pesan kesalahan atau tolak permintaan
+    // } else {
+    //     echo "valid valid" . $this->input->post("csrf_name");
+    //     // Token CSRF valid, lanjutkan dengan pemrosesan data
+    // }
+
+    // return;
+    // if( )
+
+    // echo $this->input->method("kunci_csrf");
+    // return;
+    // // . "-" . $this->security->get_csrf_hash();
+    // if ($this->input->post('csrf_name') !== $this->security->get_csrf_hash()) {
+    //     echo "tidak valid" . $this->input->post("csrf_name");
+    //     // Token CSRF tidak valid, lakukan penanganan di sini
+    //     // Contoh: tampilkan pesan kesalahan atau tolak permintaan
+    // } else {
+    //     echo "valid valid" . $this->input->post("csrf_name");
+    //     // Token CSRF valid, lanjutkan dengan pemrosesan data
+    // }
+
+    // return;
+    // $data["judul"] = "List Buku";
+
+    // $keyw = $this->input->post('keyw');
+    // // return;
+    // $sql = " SELECT * FROM `tb_buku` where judul like '%$keyw%'
+    //         ";
+    // // echo $sql;
+    // // return;
+    // $data["buks"] =  $this->db->query($sql)->row_array();
+    // // $data["ktgs"] = $this->db->get('tbl_kateg')->result();
+    // // $data["loks"] = $this->db->get('tbl_lok')->result();
+    // $this->load->view('vtoko', $data);
 }
     
     /* End of file Login.php */
